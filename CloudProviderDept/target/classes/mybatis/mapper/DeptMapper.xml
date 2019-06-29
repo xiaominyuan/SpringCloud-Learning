@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yxm.cloud.dao.DeptDao">
+    <select id="findById" resultType="Dept" parameterType="Long">
+        select deptNo, dName, dbSource from dept where deptNo=#{deptNo};
+    </select>
+    <select id="findAll" resultType="Dept">
+        select deptNo, dName, dbSource from dept;
+    </select>
+    <insert id="addDept" parameterType="Dept">
+        INSERT INTO dept(deptNo, dName,dbSource) VALUES(#{deptNo},#{dName},#{dbSource});
+    </insert>
+</mapper>
